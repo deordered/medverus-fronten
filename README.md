@@ -1,1 +1,1 @@
-// Test trigger for GitHub Actions
+// Test trigger for GitHub Actions - Fly.io deployment ready! 🚀
