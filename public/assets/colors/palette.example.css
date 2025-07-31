@@ -1,0 +1,81 @@
+/* Medverus AI Brand Color Palette */
+:root {
+  /* Primary Brand Colors */
+  --brand-primary: #2563eb;
+  --brand-primary-50: #eff6ff;
+  --brand-primary-100: #dbeafe;
+  --brand-primary-200: #bfdbfe;
+  --brand-primary-300: #93c5fd;
+  --brand-primary-400: #60a5fa;
+  --brand-primary-500: #3b82f6;
+  --brand-primary-600: #2563eb;
+  --brand-primary-700: #1d4ed8;
+  --brand-primary-800: #1e40af;
+  --brand-primary-900: #1e3a8a;
+  
+  /* Secondary Colors */
+  --brand-secondary: #64748b;
+  --brand-secondary-50: #f8fafc;
+  --brand-secondary-100: #f1f5f9;
+  --brand-secondary-200: #e2e8f0;
+  --brand-secondary-300: #cbd5e1;
+  --brand-secondary-400: #94a3b8;
+  --brand-secondary-500: #64748b;
+  --brand-secondary-600: #475569;
+  --brand-secondary-700: #334155;
+  --brand-secondary-800: #1e293b;
+  --brand-secondary-900: #0f172a;
+  
+  /* Accent Colors */
+  --brand-accent: #8b5cf6;
+  --brand-accent-50: #faf5ff;
+  --brand-accent-100: #f3e8ff;
+  --brand-accent-200: #e9d5ff;
+  --brand-accent-300: #d8b4fe;
+  --brand-accent-400: #c084fc;
+  --brand-accent-500: #a855f7;
+  --brand-accent-600: #9333ea;
+  --brand-accent-700: #7c3aed;
+  --brand-accent-800: #6b21a8;
+  --brand-accent-900: #581c87;
+  
+  /* Medical Semantic Colors */
+  --brand-success: #16a34a;
+  --brand-warning: #eab308;
+  --brand-danger: #dc2626;
+  --brand-neutral: #6b7280;
+  
+  /* Surface Colors */
+  --brand-background: #ffffff;
+  --brand-foreground: #0f172a;
+  --brand-surface: #f8fafc;
+  --brand-muted: #94a3b8;
+  --brand-border: #e2e8f0;
+  
+  /* Medical Context Colors */
+  --medical-emergency: #dc2626;
+  --medical-critical: #ea580c;
+  --medical-warning: #eab308;
+  --medical-stable: #16a34a;
+  --medical-info: #2563eb;
+  
+  /* Content Source Colors */
+  --source-medverus: #2563eb;
+  --source-pubmed: #16a34a;
+  --source-web: #7c3aed;
+  --source-files: #ea580c;
+}
+
+/* Dark Mode Variants */
+[data-theme="dark"] {
+  --brand-background: #0f172a;
+  --brand-foreground: #f8fafc;
+  --brand-surface: #1e293b;
+  --brand-muted: #64748b;
+  --brand-border: #334155;
+  
+  /* Adjust other colors for dark mode */
+  --brand-primary: #3b82f6;
+  --brand-secondary: #94a3b8;
+  --brand-accent: #a855f7;
+}

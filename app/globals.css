@@ -1,0 +1,438 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import brand colors from organized assets */
+@import url('/assets/colors/palette.css');
+
+/* CSS Variables for shadcn/ui theming - Updated with brand colors */
+@layer base {
+  :root {
+    /* Base colors using brand palette with subtle green tint */
+    --background: 118 20% 98%;                  /* Very subtle green tint */
+    --foreground: 0 0% 18%;                     /* #2d2d2d converted to HSL */
+    --card: 0 0% 100%;                          /* White */
+    --card-foreground: 0 0% 18%;                /* #2d2d2d */
+    --popover: 0 0% 100%;                       /* White */
+    --popover-foreground: 0 0% 18%;             /* #2d2d2d */
+    
+    /* Primary colors - Brand green #a1f7a0 with enhanced vibrancy */
+    --primary: 118 92% 82%;                     /* Enhanced brand green */
+    --primary-foreground: 0 0% 18%;             /* Dark text on green */
+    
+    /* Secondary colors - Dark gray #2d2d2d */
+    --secondary: 0 0% 97%;                      /* Light gray for secondary */
+    --secondary-foreground: 0 0% 18%;           /* Dark text */
+    
+    /* Muted colors */
+    --muted: 210 14% 97%;                       /* Very light gray */
+    --muted-foreground: 215 16% 47%;            /* Medium gray */
+    
+    /* Accent colors - Brand accent #7dd87a */
+    --accent: 118 61% 66%;                      /* #7dd87a converted to HSL */
+    --accent-foreground: 0 0% 18%;              /* Dark text */
+    
+    /* Destructive colors */
+    --destructive: 354 70% 54%;                 /* #dc3545 converted to HSL */
+    --destructive-foreground: 0 0% 98%;         /* White text */
+    
+    /* Border and input colors */
+    --border: 210 17% 93%;                      /* Light border */
+    --input: 210 17% 93%;                       /* Input border */
+    --ring: 118 88% 79%;                        /* Focus ring - brand primary */
+    --radius: 0.5rem;
+    
+    /* Brand-specific CSS variables */
+    --brand-primary: 118 88% 79%;               /* #a1f7a0 */
+    --brand-secondary: 0 0% 18%;                /* #2d2d2d */
+    --brand-accent: 118 61% 66%;                /* #7dd87a */
+    --brand-success: 118 88% 79%;               /* Same as primary */
+    --brand-warning: 45 100% 51%;               /* #ffc107 */
+    --brand-danger: 354 70% 54%;                /* #dc3545 */
+    
+    /* Medical-specific CSS variables using brand colors */
+    --medical-primary: 118 88% 79%;             /* Brand green */
+    --medical-secondary: 0 0% 18%;              /* Brand dark */
+    --medical-success: 118 88% 79%;             /* Brand green */
+    --medical-warning: 45 100% 51%;             /* Warning yellow */
+    --medical-danger: 354 70% 54%;              /* Danger red */
+    --medical-neutral: 215 16% 47%;             /* Neutral gray */
+    
+    /* Chart colors using brand palette */
+    --chart-1: 118 88% 79%;                     /* Brand primary */
+    --chart-2: 118 61% 66%;                     /* Brand accent */
+    --chart-3: 118 45% 52%;                     /* Brand dark variant */
+    --chart-4: 45 100% 51%;                     /* Warning */
+    --chart-5: 354 70% 54%;                     /* Danger */
+  }
+
+  .dark {
+    /* Dark mode using brand dark palette */
+    --background: 0 0% 10%;                     /* Very dark background */
+    --foreground: 0 0% 97%;                     /* Light text */
+    --card: 0 0% 18%;                           /* #2d2d2d for cards */
+    --card-foreground: 0 0% 97%;                /* Light text on dark cards */
+    --popover: 0 0% 18%;                        /* Dark popover */
+    --popover-foreground: 0 0% 97%;             /* Light text */
+    
+    /* Primary colors adjusted for dark mode */
+    --primary: 118 61% 66%;                     /* Slightly darker green for contrast */
+    --primary-foreground: 0 0% 18%;             /* Dark text on green */
+    
+    /* Secondary colors for dark mode */
+    --secondary: 0 0% 27%;                      /* Lighter than card but darker than bg */
+    --secondary-foreground: 0 0% 97%;           /* Light text */
+    
+    /* Muted colors for dark mode */
+    --muted: 0 0% 27%;                          /* Muted background */
+    --muted-foreground: 215 16% 60%;            /* Muted text */
+    
+    /* Accent colors for dark mode */
+    --accent: 118 88% 79%;                      /* Brighter accent in dark mode */
+    --accent-foreground: 0 0% 18%;              /* Dark text */
+    
+    /* Destructive colors for dark mode */
+    --destructive: 354 70% 54%;                 /* Keep same red */
+    --destructive-foreground: 0 0% 98%;         /* White text */
+    
+    /* Border and input for dark mode */
+    --border: 0 0% 27%;                         /* Dark border */
+    --input: 0 0% 27%;                          /* Dark input border */
+    --ring: 118 61% 66%;                        /* Focus ring */
+    
+    /* Brand colors for dark mode */
+    --brand-primary: 118 61% 66%;               /* Adjusted for contrast */
+    --brand-secondary: 0 0% 97%;                /* Light text */
+    --brand-accent: 118 88% 79%;                /* Bright accent */
+    --brand-success: 118 61% 66%;               /* Adjusted green */
+    --brand-warning: 45 100% 51%;               /* Keep warning */
+    --brand-danger: 354 70% 54%;                /* Keep danger */
+    
+    /* Medical colors for dark mode */
+    --medical-primary: 118 61% 66%;             /* Adjusted brand green */
+    --medical-secondary: 0 0% 97%;              /* Light text */
+    --medical-success: 118 61% 66%;             /* Success green */
+    --medical-warning: 45 100% 51%;             /* Warning yellow */
+    --medical-danger: 354 70% 54%;              /* Danger red */
+    --medical-neutral: 215 16% 60%;             /* Neutral gray */
+    
+    /* Chart colors for dark mode */
+    --chart-1: 118 61% 66%;                     /* Primary */
+    --chart-2: 118 88% 79%;                     /* Accent */
+    --chart-3: 118 45% 52%;                     /* Dark variant */
+    --chart-4: 45 100% 51%;                     /* Warning */
+    --chart-5: 354 70% 54%;                     /* Danger */
+  }
+}
+
+/* Base styles for medical application */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-primary/[0.02] via-background to-primary/[0.08] text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-attachment: fixed;
+  }
+  
+  /* Enhanced focus styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+  
+  /* Medical-specific typography */
+  .medical-heading {
+    @apply text-medical-heading font-semibold tracking-tight;
+  }
+  
+  .medical-body {
+    @apply text-medical-body text-foreground/90;
+  }
+  
+  .medical-caption {
+    @apply text-medical-caption text-muted-foreground font-medium;
+  }
+  
+  .medical-label {
+    @apply text-medical-label font-semibold text-foreground;
+  }
+}
+
+/* Medical component styles */
+@layer components {
+  /* Medical card styles */
+  .medical-card {
+    @apply bg-card border border-border rounded-lg shadow-medical-card;
+  }
+  
+  .medical-card-elevated {
+    @apply bg-card border border-border rounded-lg shadow-medical-elevated;
+  }
+  
+  /* Medical form styles */
+  .medical-form-field {
+    @apply space-y-2;
+  }
+  
+  .medical-form-label {
+    @apply medical-label;
+  }
+  
+  .medical-form-input {
+    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  
+  /* Medical button variants */
+  .medical-button-primary {
+    @apply bg-medical-blue text-white hover:bg-medical-blue/90 focus-visible:ring-medical-blue;
+  }
+  
+  .medical-button-secondary {
+    @apply bg-medical-green text-white hover:bg-medical-green/90 focus-visible:ring-medical-green;
+  }
+  
+  .medical-button-warning {
+    @apply bg-medical-yellow text-black hover:bg-medical-yellow/90 focus-visible:ring-medical-yellow;
+  }
+  
+  .medical-button-danger {
+    @apply bg-medical-red text-white hover:bg-medical-red/90 focus-visible:ring-medical-red;
+  }
+  
+  /* Medical status indicators */
+  .medical-status-active {
+    @apply bg-status-active/10 text-status-active border-status-active/20;
+  }
+  
+  .medical-status-inactive {
+    @apply bg-status-inactive/10 text-status-inactive border-status-inactive/20;
+  }
+  
+  .medical-status-pending {
+    @apply bg-status-pending/10 text-status-pending border-status-pending/20;
+  }
+  
+  .medical-status-processing {
+    @apply bg-status-processing/10 text-status-processing border-status-processing/20;
+  }
+  
+  /* Medical tier badges */
+  .tier-free {
+    @apply bg-tier-free/10 text-tier-free border-tier-free/20;
+  }
+  
+  .tier-pro {
+    @apply bg-tier-pro/10 text-tier-pro border-tier-pro/20;
+  }
+  
+  .tier-enterprise {
+    @apply bg-tier-enterprise/10 text-tier-enterprise border-tier-enterprise/20;
+  }
+  
+  /* Medical loading states */
+  .medical-loading-dots {
+    @apply inline-flex space-x-1;
+  }
+  
+  .medical-loading-dots > div {
+    @apply w-2 h-2 bg-current rounded-full animate-loading-dots;
+  }
+  
+  .medical-loading-dots > div:nth-child(2) {
+    @apply animation-delay-150;
+  }
+  
+  .medical-loading-dots > div:nth-child(3) {
+    @apply animation-delay-300;
+  }
+  
+  /* Medical data table styles */
+  .medical-table {
+    @apply w-full border-collapse;
+  }
+  
+  .medical-table th {
+    @apply border-b border-border bg-muted/50 px-4 py-3 text-left medical-label;
+  }
+  
+  .medical-table td {
+    @apply border-b border-border px-4 py-3 medical-body;
+  }
+  
+  .medical-table tr:hover {
+    @apply bg-muted/25;
+  }
+  
+  /* Medical progress bars */
+  .medical-progress-bar {
+    @apply h-2 w-full bg-secondary rounded-full overflow-hidden;
+  }
+  
+  .medical-progress-fill {
+    @apply h-full bg-primary transition-all duration-300 ease-in-out;
+  }
+  
+  /* Medical alert styles */
+  .medical-alert {
+    @apply relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground;
+  }
+  
+  .medical-alert-default {
+    @apply bg-background text-foreground;
+  }
+  
+  .medical-alert-destructive {
+    @apply border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive;
+  }
+  
+  /* Medical sidebar styles */
+  .medical-sidebar {
+    @apply fixed left-0 top-0 z-50 h-screen w-64 border-r border-border bg-background;
+  }
+  
+  .medical-sidebar-collapsed {
+    @apply w-16;
+  }
+}
+
+/* Utility classes for medical application */
+@layer utilities {
+  /* Animation delays */
+  .animation-delay-150 {
+    animation-delay: 150ms;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  
+  /* Blob animation for hero background */
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+  
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  
+  /* Medical-specific utilities */
+  .medical-focus {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+  
+  /* Premium glass morphism effects */
+  .glass-effect {
+    @apply bg-card/60 backdrop-blur-md border border-primary/20;
+  }
+  
+  .glass-effect-strong {
+    @apply bg-card/80 backdrop-blur-lg border border-primary/30;
+  }
+  
+  /* Premium gradients */
+  .premium-gradient {
+    @apply bg-gradient-to-br from-primary/5 via-background to-primary/10;
+  }
+  
+  .medical-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--muted));
+  }
+  
+  .medical-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .medical-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  .medical-scrollbar::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground));
+    border-radius: 3px;
+  }
+  
+  /* Screen reader only content */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+/* Print styles for medical documents */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .medical-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: black;
+  }
+  
+  .medical-heading {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --ring: 0 0% 0%;
+  }
+  
+  .dark {
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+    --ring: 0 0% 100%;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

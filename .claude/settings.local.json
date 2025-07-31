@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:pypi.org)",
+      "Bash(python -m SuperClaude:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "Bash(claude mcp add:*)",
+      "Bash(claude mcp:*)",
+      "mcp__smithery-ai-server-sequential-thinking__sequentialthinking",
+      "mcp__upstash-context-7-mcp__resolve-library-id",
+      "mcp__ymadd-shadcn-ui-mcp-server__list_shadcn_components",
+      "mcp__microsoft-playwright-mcp__browser_install",
+      "mcp__upstash-context-7-mcp__get-library-docs",
+      "Bash(rm:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(npm run build:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(powershell:*)",
+      "Bash(npx playwright install:*)",
+      "Bash(node:*)",
+      "Bash(npx playwright:*)",
+      "mcp__sequential-thinking__process_thought",
+      "mcp__filesystem__directory_tree",
+      "mcp__filesystem__list_directory",
+      "mcp__filesystem__read_file",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "Bash(git commit:*)"
+    ],
+    "deny": []
+  },
+  "enableAllProjectMcpServers": true
+}

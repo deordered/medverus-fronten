@@ -1,0 +1,117 @@
+/* Medverus AI Brand Color Palette - Based on Logo Colors */
+:root {
+  /* Primary Brand Colors - From Logo */
+  --brand-primary: #a1f7a0;
+  --brand-primary-50: #f0fef0;
+  --brand-primary-100: #dcfcdb;
+  --brand-primary-200: #bbf7ba;
+  --brand-primary-300: #86ef85;
+  --brand-primary-400: #a1f7a0;
+  --brand-primary-500: #7dd87a;
+  --brand-primary-600: #5bb85a;
+  --brand-primary-700: #4a9249;
+  --brand-primary-800: #3e733e;
+  --brand-primary-900: #355f35;
+  
+  /* Secondary Colors - From Logo Dark */
+  --brand-secondary: #2d2d2d;
+  --brand-secondary-50: #f8f8f8;
+  --brand-secondary-100: #efefef;
+  --brand-secondary-200: #dcdcdc;
+  --brand-secondary-300: #bdbdbd;
+  --brand-secondary-400: #989898;
+  --brand-secondary-500: #7c7c7c;
+  --brand-secondary-600: #656565;
+  --brand-secondary-700: #525252;
+  --brand-secondary-800: #464646;
+  --brand-secondary-900: #2d2d2d;
+  
+  /* Accent Colors */
+  --brand-accent: #7dd87a;
+  --brand-accent-light: #e8fce8;
+  --brand-accent-dark: #6bb86a;
+  
+  /* Medical Semantic Colors */
+  --brand-success: #a1f7a0;
+  --brand-warning: #ffc107;
+  --brand-danger: #dc3545;
+  --brand-info: #17a2b8;
+  --brand-neutral: #6c757d;
+  
+  /* Surface Colors */
+  --brand-background: #ffffff;
+  --brand-foreground: #2d2d2d;
+  --brand-surface: #f8f9fa;
+  --brand-muted: #6c757d;
+  --brand-border: #e9ecef;
+  
+  /* Medical Context Colors */
+  --medical-primary: #a1f7a0;
+  --medical-secondary: #2d2d2d;
+  --medical-emergency: #dc3545;
+  --medical-critical: #fd7e14;
+  --medical-warning: #ffc107;
+  --medical-stable: #a1f7a0;
+  --medical-info: #17a2b8;
+  
+  /* Content Source Colors */
+  --source-medverus: #a1f7a0;
+  --source-pubmed: #7dd87a;
+  --source-web: #6bb86a;
+  --source-files: #fd7e14;
+  
+  /* Interactive States */
+  --brand-hover: #7dd87a;
+  --brand-active: #6bb86a;
+  --brand-focus: #a1f7a0;
+  --brand-disabled: #e9ecef;
+  
+  /* Shadow Colors */
+  --brand-shadow-sm: rgba(45, 45, 45, 0.1);
+  --brand-shadow-md: rgba(45, 45, 45, 0.15);
+  --brand-shadow-lg: rgba(45, 45, 45, 0.2);
+  --brand-shadow-xl: rgba(45, 45, 45, 0.25);
+}
+
+/* Dark Mode Variants */
+[data-theme="dark"], .dark {
+  --brand-background: #1a1a1a;
+  --brand-foreground: #f8f9fa;
+  --brand-surface: #2d2d2d;
+  --brand-muted: #6c757d;
+  --brand-border: #464646;
+  
+  /* Adjust primary for better dark mode contrast */
+  --brand-primary: #7dd87a;
+  --brand-accent: #a1f7a0;
+  --brand-hover: #6bb86a;
+  --brand-active: #5bb85a;
+  
+  /* Dark mode shadows */
+  --brand-shadow-sm: rgba(0, 0, 0, 0.2);
+  --brand-shadow-md: rgba(0, 0, 0, 0.3);
+  --brand-shadow-lg: rgba(0, 0, 0, 0.4);
+  --brand-shadow-xl: rgba(0, 0, 0, 0.5);
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --brand-primary: #4a9249;
+    --brand-secondary: #000000;
+    --brand-border: #000000;
+  }
+  
+  .dark {
+    --brand-primary: #a1f7a0;
+    --brand-secondary: #ffffff;
+    --brand-border: #ffffff;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-duration: 0.01ms;
+  }
+}

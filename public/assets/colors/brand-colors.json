@@ -1,0 +1,21 @@
+{
+  "primary": "#a1f7a0",
+  "secondary": "#2d2d2d",
+  "accent": "#7dd87a",
+  "success": "#a1f7a0",
+  "warning": "#ffc107",
+  "danger": "#dc3545",
+  "neutral": "#6c757d",
+  "background": "#ffffff",
+  "foreground": "#2d2d2d",
+  "muted": "#6c757d",
+  "border": "#e9ecef",
+  "surface": "#f8f9fa",
+  "text": "#2d2d2d",
+  "textMuted": "#6c757d",
+  "backgroundDark": "#2d2d2d",
+  "foregroundDark": "#ffffff",
+  "primaryHover": "#7dd87a",
+  "primaryLight": "#e8fce8",
+  "primaryDark": "#6bb86a"
+}

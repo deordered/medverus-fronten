@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="clutter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #2d2d2d;
+      }
+
+      .cls-2 {
+        fill: #a1f7a0;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" y="0" width="1000" height="1000"/>
+  <path class="cls-2" d="M798.87,427.04l-13.61,155.51h-209.83l-18.22,208.2h-165.73l18.22-208.2h-208.57l14.44-165.1h208.57l18.22-208.2h165.73l-18.22,208.2h209v9.58Z"/>
+</svg>

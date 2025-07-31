@@ -1,0 +1,75 @@
+{
+  "name": "Medverus AI Assets",
+  "version": "1.0.0",
+  "description": "Complete asset manifest for Medverus AI platform",
+  "assets": {
+    "logos": {
+      "main": {
+        "path": "/assets/logos/main.svg",
+        "description": "Primary logo with green background and dark cross",
+        "usage": "Light backgrounds, main branding",
+        "colors": ["#a1f7a0", "#2d2d2d"],
+        "size": "1000x1000px"
+      },
+      "secondary": {
+        "path": "/assets/logos/secondary.svg", 
+        "description": "Secondary logo with dark background and light cross",
+        "usage": "Dark backgrounds, alternative branding",
+        "colors": ["#2d2d2d", "#a1f7a0"],
+        "size": "1000x1000px"
+      }
+    },
+    "colors": {
+      "brand-colors": {
+        "path": "/assets/colors/brand-colors.json",
+        "description": "Core brand color definitions in JSON format",
+        "primary": "#a1f7a0",
+        "secondary": "#2d2d2d"
+      },
+      "palette": {
+        "path": "/assets/colors/palette.css",
+        "description": "Complete CSS color palette with CSS custom properties",
+        "includes": ["light-mode", "dark-mode", "high-contrast"]
+      }
+    },
+    "icons": {
+      "favicon": {
+        "path": "/assets/icons/favicon.ico",
+        "description": "Browser favicon",
+        "sizes": ["16x16", "32x32", "48x48"]
+      }
+    },
+    "fonts": {
+      "primary": "Inter, system-ui, sans-serif",
+      "secondary": "Inter, system-ui, sans-serif", 
+      "mono": "JetBrains Mono, Consolas, monospace"
+    }
+  },
+  "themes": {
+    "light": {
+      "background": "#ffffff",
+      "foreground": "#2d2d2d",
+      "primary": "#a1f7a0",
+      "accent": "#7dd87a"
+    },
+    "dark": {
+      "background": "#1a1a1a",
+      "foreground": "#f8f9fa",
+      "primary": "#7dd87a",
+      "accent": "#a1f7a0"
+    }
+  },
+  "brand": {
+    "name": "Medverus AI",
+    "tagline": "Medical Search Platform",
+    "domain": "medical-ai",
+    "style": "modern-medical",
+    "accessibility": "WCAG-2.1-AA"
+  },
+  "optimization": {
+    "formats": ["SVG", "PNG", "WEBP"],
+    "compression": "optimized",
+    "responsive": true,
+    "retina": true
+  }
+}
