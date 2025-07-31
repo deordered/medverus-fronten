@@ -1,0 +1,91 @@
+# Fly.io deployment configuration for Medverus AI Frontend
+# Medical-grade Next.js application with HIPAA compliance
+
+app = "medverus-frontend"
+primary_region = "iad"  # US East for medical compliance
+kill_signal = "SIGINT"
+kill_timeout = "5s"
+
+[experimental]
+  auto_rollback = true
+  enable_consul = false
+
+[build]
+  dockerfile = "Dockerfile"
+
+[deploy]
+  strategy = "rolling"
+  max_unavailable = 0.25
+
+[env]
+  NODE_ENV = "production"
+  NEXT_TELEMETRY_DISABLED = "1"
+  PORT = "3000"
+  HOSTNAME = "0.0.0.0"
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 3000
+  processes = ["app"]
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+    force_https = true
+
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
+
+  [services.concurrency]
+    type = "connections"
+    soft_limit = 200
+    hard_limit = 250
+
+  [[services.tcp_checks]]
+    interval = "15s"
+    timeout = "2s"
+    grace_period = "5s"
+    restart_limit = 0
+
+  [[services.http_checks]]
+    interval = "30s"
+    timeout = "5s"
+    grace_period = "10s"
+    method = "get"
+    path = "/api/health"
+    protocol = "https"
+    tls_skip_verify = false
+    headers = {}
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+# Medical platform resource requirements
+[[vm]]
+  cpu_kind = "performance"  # Enhanced performance for medical workloads
+  cpus = 2
+  memory_mb = 2048
+
+# Geographic restrictions for HIPAA compliance
+# Ensure all traffic stays within US regions
+[metrics]
+  port = 9091
+  path = "/metrics"
+
+# Security headers for medical compliance
+[http_service.http_options]
+  h2_backend = true
+  response_headers = {
+    "Strict-Transport-Security" = "max-age=31536000; includeSubDomains; preload",
+    "X-Content-Type-Options" = "nosniff",
+    "X-Frame-Options" = "DENY",
+    "X-XSS-Protection" = "1; mode=block",
+    "Referrer-Policy" = "strict-origin-when-cross-origin",
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://accounts.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.medverus.com https://accounts.google.com; frame-src https://accounts.google.com"
+  }
